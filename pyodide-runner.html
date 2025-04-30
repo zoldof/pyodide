@@ -15,7 +15,7 @@
     const file = params.get('file');
 
     import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
-    const pyfile = await fetch("https://zoldof.github.io/${repo}/${file}");
+    const pyfile = await fetch('https://zoldof.github.io/${repo}/${file}');
     const pyodide = await loadPyodide();
     const scriptText = await pyfile.text();
 
