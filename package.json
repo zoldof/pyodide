@@ -1,0 +1,11 @@
+{
+  "name": "zdpy",
+  "version": "1.0.0",
+  "description": "Pyodide npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "author": "zoldof",
+  "license": "MIT"
+}
