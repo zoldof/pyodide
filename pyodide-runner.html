@@ -8,8 +8,8 @@
   const repo = params.get("repo");
 
   // Pythonファイルがある固定リポジトリのURL
-  const baseUrl = "https://zoldof.github.io/${repo}/";
-  const fullUrl = baseUrl + encodeURIComponent(filename);
+  const baseUrl = "https://zoldof.github.io/";
+  const fullUrl = baseUrl + encodeURIComponent(repo) + encodeURIComponent(filename);
 
   try {
     const res = await fetch(fullUrl);
