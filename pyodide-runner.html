@@ -1,0 +1,21 @@
+<script type="module">
+  import initPyodide from "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js";
+
+  const pyodide = await initPyodide();
+
+  const params = new URLSearchParams(location.search);
+  const filename = params.get("file");
+
+  // Pythonファイルがある固定リポジトリのURL
+  const baseUrl = "https://zoldof.github.io/time-culc/";
+  const fullUrl = baseUrl + encodeURIComponent(filename);
+
+  try {
+    const res = await fetch(fullUrl);
+    const code = await res.text();
+    const result = await pyodide.runPythonAsync(code);
+    document.body.innerHTML = `<pre>${result}</pre>`;
+  } catch (err) {
+    document.body.innerHTML = `<pre>エラー: ${err}</pre>`;
+  }
+</script>
