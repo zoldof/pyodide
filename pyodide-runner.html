@@ -1,34 +1,35 @@
-<script type="module">
-  import initPyodide from "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js";
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyodideでhello.pyを読み込む</title>
+</head>
+<body>
+  <h1>Pyodide 実験（外部ファイル読み込み）</h1>
+  <pre id="output">実行中...</pre>
 
-  try {
-    const pyodide = await initPyodide();
-    console.log("Pyodide initialized successfully");
-
+  <script type="module">
     const params = new URLSearchParams(location.search);
-    const filename = params.get("file");
-    const repo = params.get("repo");
+    const repo = params.get('repo');
+    const file = params.get('file');
 
-    // Pythonファイルがある固定リポジトリのURL
-    const baseUrl = "https://zoldof.github.io/";
-    const fullUrl = baseUrl + encodeURIComponent(repo) + "/" + encodeURIComponent(filename);
-    console.log("Full URL:", fullUrl);  // URLを確認
+    import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
+    const pyfile = await fetch("https://zoldof.github.io/${repo}/${file}");
+    const pyodide = await loadPyodide();
+    const scriptText = await pyfile.text();
 
-    const res = await fetch(fullUrl);
-    if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
-    }
-    const code = await res.text();
+    // 実行して関数を定義
+    await pyodide.runPythonAsync(scriptText);
 
-    // PyodideでPythonコードを実行
-    await pyodide.runPythonAsync(code);
+    // Python 関数を JS から呼び出す
+    const greet = pyodide.globals.get('greet');
+    const result = greet("流川町からの旅人");
 
-    // Pythonで定義した関数を呼び出す
-    const result = pyodide.globals.get("greet")("World");
-    document.body.innerHTML = `<pre>${result}</pre>`;
-  } catch (err) {
-    console.error("Error:", err);
-    document.body.innerHTML = `<pre>エラー: ${err}</pre>`;
-  }
-</script>
+    document.getElementById("output").textContent = result;
 
+    // メモリリーク対策（不要なら省略可）
+    greet.destroy();
+  </script>
+</body>
+</html>
