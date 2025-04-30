@@ -9,7 +9,7 @@
 
   // Pythonファイルがある固定リポジトリのURL
   const baseUrl = "https://zoldof.github.io/";
-  const fullUrl = baseUrl + encodeURIComponent(repo) + encodeURIComponent(filename);
+  const fullUrl = baseUrl + encodeURIComponent(repo) + "/" + encodeURIComponent(filename);
 
   try {
     const res = await fetch(fullUrl);
