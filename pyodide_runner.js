@@ -18,10 +18,9 @@ const inputModule = await import(`./uis/${ui}_input.js`).catch(() => {});
 if (inputModule?.inputUI) {
   inputUI = inputModule.inputUI;
 }
+// pyodideでpyの関数を使用
+const result = pyFunc(inputUI);
+pyFunc.destroy();
 
 // 出力UI（必ず用意されている前提）
-const { showOutput } = await import(`./uis/${ui}_output.js`);
-
-const result = pyFunc(inputUI);
-showOutput(result);
-pyFunc.destroy();
+(await import(`./uis/${ui}_output.js`)).showOutput(result);
