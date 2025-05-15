@@ -1,7 +1,7 @@
 const params = new URLSearchParams(location.search);
 const repo = params.get('repo');
 const ui = params.get('ui');
-const file = `${main}.py`;
+const file = `${ui}.py`;
 
 import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
 const pyfile = await fetch(`https://zoldof.github.io/${repo}/${file}`);
