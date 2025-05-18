@@ -10,7 +10,7 @@ const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
 const pyodide = await loadPyodide();
 const showText = await pyfile.text();
 const codeBlock = document.getElementById("sourceCode");
-codeBlock.textContent = scriptText;
+codeBlock.textContent = showText;
 hljs.highlightElement(codeBlock);
 let scriptText = await int.text();
 scriptText += showText
