@@ -25,8 +25,8 @@ if (inputModule?.inputUI) {
   inputUI = inputModule.inputUI;
 }
 // pyodideでpyの関数を使用
-const result = pyFunc(inputUI());
-pyFunc.destroy();
+//const result = pyFunc(inputUI());
+//pyFunc.destroy();
 
 // 出力UI（必ず用意されている前提）
-(await import(`./uis/output.js`)).showOutput(result);
+//(await import(`./uis/output.js`)).showOutput(result);
