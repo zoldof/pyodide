@@ -5,6 +5,6 @@ h1 {
 #output {
   font-size: 1.5rem; /* 文字サイズ大きめ */
   text-align: left;  /* 左揃え */
-  padding-left: 1em; /* 左側に余白（お好みで調整） */
+  padding-left: 10%; /* 左側に余白（お好みで調整） */
   white-space: pre-wrap; /* 改行を保持しつつ折り返し可能にする */
 }
