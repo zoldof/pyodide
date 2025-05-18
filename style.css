@@ -4,8 +4,6 @@ h1 {
 
 #output {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 75vh; /* 表示領域の高さに応じて調整 */
   font-size: 1.5rem; /* 文字サイズ大きめ */
   text-align: left;  /* 左揃え */
