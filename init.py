@@ -3,7 +3,7 @@ import time
 import tracemalloc
 import random
 
-# データ作成
+#データ作成
 n = 1000
 min_val = 0
 max_val = 999
