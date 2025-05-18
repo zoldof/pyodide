@@ -9,7 +9,7 @@ const pyfile = await fetch(`https://zoldof.github.io/${repo}/${file}`);
 const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
 const pyodide = await loadPyodide();
 const showText = await pyfile.text();
-const scriptText = (await int.text()) + showText + (await measure.text());
+const scriptText = [await int.text(), showText, await measure.text()].join('\n\n');
 const codeBlock = document.getElementById("sourceCode");
 codeBlock.textContent = showText;
 hljs.highlightElement(codeBlock);
