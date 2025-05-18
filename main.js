@@ -11,22 +11,22 @@ const pyodide = await loadPyodide();
 const showText = await pyfile.text();
 const scriptText = [await init.text(), showText, await measure.text()].join('\n\n');
 const codeBlock = document.getElementById("sourceCode");
-codeBlock.textContent = scriptText;
+codeBlock.textContent = showText;
 hljs.highlightElement(codeBlock);
 await pyodide.runPythonAsync(scriptText);
 
 // Python 関数を取得（main名と一致させる）
-//const pyFunc = pyodide.globals.get('main');
+const pyFunc = pyodide.globals.get('main');
 
 // 入力UI（あれば使う）
-//let inputUI = () => {};
-//const inputModule = await import(`./uis/${ui}_input.js`).catch(() => {});
-//if (inputModule?.inputUI) {
-//  inputUI = inputModule.inputUI;
-//}
+let inputUI = () => {};
+const inputModule = await import(`./uis/${ui}_input.js`).catch(() => {});
+if (inputModule?.inputUI) {
+  inputUI = inputModule.inputUI;
+}
 // pyodideでpyの関数を使用
-//const result = pyFunc(inputUI());
-//pyFunc.destroy();
+const result = pyFunc(inputUI());
+pyFunc.destroy();
 
 // 出力UI（必ず用意されている前提）
-//(await import(`./uis/output.js`)).showOutput(result);
+(await import(`./uis/output.js`)).showOutput(result);
