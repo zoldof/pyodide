@@ -6,8 +6,10 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh; /* 表示領域の高さに応じて調整 */
-  font-size: 2.0rem; /* 文字サイズ大きめ */
-  text-align: center;
+  height: 75vh; /* 表示領域の高さに応じて調整 */
+  font-size: 1.5rem; /* 文字サイズ大きめ */
+  text-align: left;  /* 左揃え */
+  padding-left: 1em; /* 左側に余白（お好みで調整） */
+  white-space: pre-wrap; /* 改行を保持しつつ折り返し可能にする */
   margin: auto;
 }
