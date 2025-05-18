@@ -12,8 +12,8 @@ const showText = await pyfile.text();
 const scriptText = [await init.text(), showText, await measure.text()].join('\n\n');
 const codeBlock = document.getElementById("sourceCode");
 codeBlock.textContent = scriptText;
-//hljs.highlightElement(codeBlock);
-//await pyodide.runPythonAsync(scriptText);
+hljs.highlightElement(codeBlock);
+await pyodide.runPythonAsync(scriptText);
 
 // Python 関数を取得（main名と一致させる）
 //const pyFunc = pyodide.globals.get('main');
