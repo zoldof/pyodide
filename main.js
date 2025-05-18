@@ -8,12 +8,13 @@ const init = await fetch(`https://zoldof.github.io/pyodide/init.py`);
 const pyfile = await fetch(`https://zoldof.github.io/${repo}/${file}`);
 const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
 const pyodide = await loadPyodide();
-let scriptText = await int.text();
-scriptText += await pyfile.text();
-scriptText += await measure.text();
+const showText = await pyfile.text();
 const codeBlock = document.getElementById("sourceCode");
 codeBlock.textContent = scriptText;
 hljs.highlightElement(codeBlock);
+let scriptText = await int.text();
+scriptText += showText
+scriptText += await measure.text();
 await pyodide.runPythonAsync(scriptText);
 
 // Python 関数を取得（main名と一致させる）
