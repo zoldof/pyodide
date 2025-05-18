@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Pyodide Runner</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ▼ highlight.js を追加 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+  <h1>アルゴリズムの動作検証</h1>
+
+  <!-- ▼ 出力表示エリア（左揃え + 改行保持） -->
+  <pre id="output">実行中...</pre>
+
+  <!-- ▼ ソースコード表示（highlight付き） -->
+  <h2>検証対象コード</h2>
+  <pre><code class="language-python">
+def greet(name):
+    return f"ようこそ、{name}さん。今日もいいコード日和ですね。"
+  </code></pre>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
