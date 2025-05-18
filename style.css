@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+  padding-left: 10%;
 }
 
 #output {
@@ -9,12 +10,8 @@ h1 {
   white-space: pre-wrap; /* 改行を保持しつつ折り返し可能にする */
 }
 
-h2 {
-  text-align: center;
-}
-
 code {
-  font-size: 1.0rem; /* 文字サイズ大きめ */
+  font-size: 1.2rem; /* 文字サイズ大きめ */
   text-align: left;  /* 左揃え */
-  padding-left: 10%; /* 左側に余白（お好みで調整） */
+  padding-left: 30%; /* 左側に余白（お好みで調整） */
 }
