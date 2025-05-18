@@ -10,10 +10,10 @@ h1 {
 }
 
 h2 {
-  padding-left: 10%; /* 左側に余白（お好みで調整） */
+  text-align: center;
 }
 
-#code {
+code {
   font-size: 1.0rem; /* 文字サイズ大きめ */
   text-align: left;  /* 左揃え */
   padding-left: 10%; /* 左側に余白（お好みで調整） */
