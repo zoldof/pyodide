@@ -9,6 +9,6 @@ h1 {
 }
 
 code {
-  font-size: 1.3rem; /* 文字サイズ大きめ */
-  padding-left: 10%; /* 左側に余白（お好みで調整） */
+  font-size: 1.3rem !important; /* 文字サイズ大きめ */
+  padding-left: 10% !important; /* 左側に余白（お好みで調整） */
 }
