@@ -10,9 +10,8 @@ const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
 const pyodide = await loadPyodide();
 const showText = await pyfile.text();
 const scriptText = [await int.text(), showText, await measure.text()].join('\n\n');
-const result = scriptText
-//const codeBlock = document.getElementById("sourceCode");
-//codeBlock.textContent = scriptText;
+const codeBlock = document.getElementById("sourceCode");
+codeBlock.textContent = scriptText;
 //hljs.highlightElement(codeBlock);
 //await pyodide.runPythonAsync(scriptText);
 
@@ -30,4 +29,4 @@ const result = scriptText
 //pyFunc.destroy();
 
 // 出力UI（必ず用意されている前提）
-(await import(`./uis/output.js`)).showOutput(result);
+//(await import(`./uis/output.js`)).showOutput(result);
