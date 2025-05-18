@@ -7,6 +7,9 @@ import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodi
 const pyfile = await fetch(`https://zoldof.github.io/${repo}/${file}`);
 const pyodide = await loadPyodide();
 const scriptText = await pyfile.text();
+const codeBlock = document.getElementById("sourceCode");
+codeBlock.textContent = scriptText;
+hljs.highlightElement(codeBlock);
 await pyodide.runPythonAsync(scriptText);
 
 // Python 関数を取得（main名と一致させる）
