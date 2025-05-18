@@ -1,9 +1,7 @@
 h1 {
   padding-left: 10%;
-  border-radius: 6px; 
   background-color: #2ea44f; 
   color: #fff; 
-  display: inline-block; 
 }
 
 #output {
