@@ -9,6 +9,9 @@ h1 {
   font-size: 1.5rem; /* 文字サイズ大きめ */
   padding-left: 5%; /* 左側に余白（お好みで調整） */
   padding-right: 5%;
+  line-height: 1.5em;
+  height: calc(1.5em * 7);
+  border: 1px solid #ccc;
   white-space: pre-wrap; /* 改行を保持しつつ折り返し可能にする */
 }
 
