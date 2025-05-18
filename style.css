@@ -1,18 +1,15 @@
 h1 {
-  text-align: left;
   padding-left: 10%;
 }
 
 #output {
   font-size: 1.5rem; /* 文字サイズ大きめ */
-  text-align: left;  /* 左揃え */
   padding-left: 10%; /* 左側に余白（お好みで調整） */
   white-space: pre-wrap; /* 改行を保持しつつ折り返し可能にする */
 }
 
 code {
-  display: block;
-  font-size: 1.3rem; /* 文字サイズ大きめ */
-  text-align: left;  /* 左揃え */
-  padding-left: 10%; /* 左側に余白（お好みで調整） */
+  display: block !important;
+  font-size: 1.3rem !important; /* 文字サイズ大きめ */
+  padding-left: 10% !important; /* 左側に余白（お好みで調整） */
 }
