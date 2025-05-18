@@ -8,15 +8,15 @@ const init = await fetch(`https://zoldof.github.io/pyodide/init.py`);
 const pyfile = await fetch(`https://zoldof.github.io/${repo}/${file}`);
 const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
 const pyodide = await loadPyodide();
-const showText = await pyfile.text();
+//const showText = await pyfile.text();
 const scriptText = [await int.text(), showText, await measure.text()].join('\n\n');
 const codeBlock = document.getElementById("sourceCode");
-codeBlock.textContent = showText;
+codeBlock.textContent = scriptText;
 hljs.highlightElement(codeBlock);
-await pyodide.runPythonAsync(scriptText);
+//await pyodide.runPythonAsync(scriptText);
 
 // Python 関数を取得（main名と一致させる）
-const pyFunc = pyodide.globals.get('main');
+//const pyFunc = pyodide.globals.get('main');
 
 // 入力UI（あれば使う）
 let inputUI = () => {};
