@@ -11,7 +11,7 @@ h1 {
 }
 
 code {
-  font-size: 1.2rem; /* 文字サイズ大きめ */
+  font-size: 1.3rem; /* 文字サイズ大きめ */
   text-align: left;  /* 左揃え */
   padding-left: 30%; /* 左側に余白（お好みで調整） */
 }
