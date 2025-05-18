@@ -1,16 +1,19 @@
 h1 {
-  padding-left: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #2ea44f; 
   color: #fff; 
 }
 
 #output {
   font-size: 1.5rem; /* 文字サイズ大きめ */
-  padding-left: 10%; /* 左側に余白（お好みで調整） */
+  padding-left: 5%; /* 左側に余白（お好みで調整） */
+  padding-right: 5%;
   white-space: pre-wrap; /* 改行を保持しつつ折り返し可能にする */
 }
 
 code {
   font-size: 1.3rem !important; /* 文字サイズ大きめ */
-  padding-left: 10% !important; /* 左側に余白（お好みで調整） */
+  padding-left: 5% !important; /* 左側に余白（お好みで調整） */
+  padding-right: 5%;
 }
