@@ -2,28 +2,17 @@
 import { parseTimeInput, validateStartEnd } from "./timeValidator.js";
 
 export function inputUI() {
-  function getTimeParts(label) {
-    while (true) {
-      const t = prompt(`${label}を入力してください（hh:mm:ss）`);
-
-      try {
-        return parseTimeInput(t);
-      } catch (e) {
-        alert(e.message);
-      }
-    }
-  }
-
   let startParts, endParts;
-  while (true) {
-    startParts = getTimeParts("開始時刻");
-    endParts = getTimeParts("終了時刻");
 
+  while (true) {
     try {
+      startParts = parseTimeInput(prompt("開始時刻を入力してください（hh:mm:ss）"));
+      endParts   = parseTimeInput(prompt("終了時刻を入力してください（hh:mm:ss）"));
+
       validateStartEnd(startParts, endParts);
       break;
     } catch (e) {
-       alert(e.message);
+      alert(e.message);
     }
   }
 
