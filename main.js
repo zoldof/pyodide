@@ -26,4 +26,4 @@ const result = pyFunc(inputUI());
 pyFunc.destroy();
 
 // 出力UI（必ず用意されている前提）
-(await import(`./uis/${ui}_output.js`)).showOutput(result);
+(await import(`./uis/output.js`)).showOutput(result);
