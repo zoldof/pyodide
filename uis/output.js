@@ -7,11 +7,11 @@ function formatResult(resultData) {
       lines.push(`${key}: ${value}`);
     }
   }
-  return lines.join("\n");
+  return lines.join("");
 }
 
 export function showOutput(result) {
-  //const output = formatResult(data)
-  const output = JSON.parse(result)
+  const data = JSON.parse(result)
+  const output = formatResult(data)
   document.getElementById("output").textContent = output;
 }
