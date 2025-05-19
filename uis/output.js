@@ -12,6 +12,6 @@ function formatResult(resultData) {
 
 export function showOutput(result) {
   //const output = formatResult(data)
-  //const output = JSON.parse(result)
-  document.getElementById("output").textContent = result;
+  const output = JSON.parse(result)
+  document.getElementById("output").textContent = output;
 }
