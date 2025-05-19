@@ -12,6 +12,6 @@ function formatResult(resultData) {
 
 export function showOutput(result) {
   const data = JSON.parse(result)
-  const output = formatResult(data)
+  const output = Object.entries(data).join("\n");
   document.getElementById("output").textContent = output;
 }
