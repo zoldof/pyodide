@@ -16,8 +16,9 @@ def measure_all(func, args):
     }
 
     result_data["実行結果　　　　"] = result
+    json_str = json.dumps(result_data, ensure_ascii=False)
 
-    return result_data
+    return json_str
 
 def measure(name):  
     return measure_all(main, name)
