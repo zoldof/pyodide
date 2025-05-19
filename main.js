@@ -16,7 +16,7 @@ hljs.highlightElement(codeBlock);
 await pyodide.runPythonAsync(scriptText);
 
 // Python 関数を取得（main名と一致させる）
-const pyFunc = pyodide.globals.get('main');
+const pyFunc = pyodide.globals.get('measure');
 
 // 入力UI（あれば使う）
 let inputUI = () => {};
