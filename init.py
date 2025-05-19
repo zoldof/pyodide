@@ -2,6 +2,7 @@
 import time
 import tracemalloc
 import random
+import json
 
 #データ作成
 n = 1000
