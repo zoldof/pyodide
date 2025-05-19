@@ -10,9 +10,9 @@ def measure_all(func, args):
 
     elapsed_time = end_time - start_time
     result_data = {
-        "実行時間　　　　": elapsed_time,
-        "メモリ（現時点）": current,
-        "メモリ（ピーク）": peak,
+        "実行時間　　　　": f"{elapsed_time:.6f} 秒",
+        "メモリ（現時点）": f"{current} bytes",
+        "メモリ（ピーク）": f"{peak} bytes",
     }
 
     result_data["実行結果　　　　"] = result
