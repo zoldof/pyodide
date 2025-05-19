@@ -15,6 +15,6 @@ function formatResult(resultData) {
 }
 
 export function showOutput(result) {
-  const output = formatResult(result)
-  document.getElementById("output").textContent = output;
+  //const output = formatResult(result)
+  document.getElementById("output").textContent = result;
 }
