@@ -13,7 +13,7 @@ def measure_all(func, args):
         f"実行時間　　　　: {elapsed_time:.6f} 秒\n",
         f"メモリ（現時点）: {current} bytes\n",
         f"メモリ（ピーク）: {peak} bytes\n",
-        f"実行結果　　　　: {result}\n"
+        f"実行結果　　　　: {result} \n"
     }
 
     json_str = json.dumps(result_data, ensure_ascii=False)
