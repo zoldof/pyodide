@@ -7,7 +7,7 @@ function formatResult(resultData) {
       lines.push(`${key}: ${value}`);
     }
   }
-  return lines.join("");
+  return lines.join("\n");
 }
 
 export function showOutput(result) {
