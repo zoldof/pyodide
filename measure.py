@@ -10,14 +10,13 @@ def measure_all(func, args):
 
     elapsed_time = end_time - start_time
     result_data = {
-        "実行時間　　　　": f"{elapsed_time:.6f} 秒",
-        "メモリ（現時点）": f"{current} bytes",
-        "メモリ（ピーク）": f"{peak} bytes",
+        f"実行時間　　　　: {elapsed_time:.6f} 秒\n",
+        f"メモリ（現時点）: {current} bytes\n",
+        f"メモリ（ピーク）: {peak} bytes\n",
+        f"実行結果　　　　: {result}\n"
     }
 
-    result_data["実行結果　　　　"] = result
     json_str = json.dumps(result_data, ensure_ascii=False)
-
     return json_str
 
 def measure(name):  
