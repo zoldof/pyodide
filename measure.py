@@ -10,10 +10,10 @@ def measure_all(func, args):
 
     elapsed_time = end_time - start_time
     result_data = {
-        "実行時間": f"{elapsed_time:.6f} 秒\n",
+        "実行時間　　　　": f"{elapsed_time:.6f} 秒\n",
         "メモリ（現時点）": f"{current} bytes\n",
         "メモリ（ピーク）": f"{peak} bytes\n",
-        "実行結果": f"{result}\n"
+        "実行結果　　　　": f"{result}\n"
     }
 
     json_str = json.dumps(result_data, ensure_ascii=False)
