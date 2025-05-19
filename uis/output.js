@@ -1,11 +1,7 @@
 function formatResult(resultData) {
   const lines = [];
   for (const [key, value] of Object.entries(resultData)) {
-    if (key === "メモリ（現時点）" || key === "メモリ（ピーク）") {
-      lines.push(`${key}: ${value} bytes`);
-    } else if (typeof value === "number") {
-      lines.push(`${key}: ${value.toFixed(6)} 秒`);
-    } else if (Array.isArray(value)) {
+    if (Array.isArray(value)) {
       lines.push(`${key}: ${JSON.stringify(value)}`);
     } else {
       lines.push(`${key}: ${value}`);
