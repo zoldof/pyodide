@@ -15,7 +15,7 @@ function formatResult(resultData) {
 }
 
 export function showOutput(result) {
-  const data = JSON.parse((result);
-  const output = formatResult(date)
+  const data = JSON.parse(result);
+  const output = formatResult(data)
   document.getElementById("output").textContent = output;
 }
