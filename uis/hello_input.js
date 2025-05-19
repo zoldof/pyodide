@@ -1,7 +1,3 @@
-// ← import はファイルの先頭
-import Swal from 'sweetalert2';
-
-// 名前入力UIのエクスポート関数
 export async function inputUI() {
   const config = {
     title: "名前の入力",
