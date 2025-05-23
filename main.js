@@ -1,11 +1,10 @@
 const params = new URLSearchParams(location.search);
-const repo = params.get('repo');
 const ui = params.get('ui');
 const file = `${ui}.py`;
 
 import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
 const init = await fetch(`https://zoldof.github.io/pyodide/init.py`);
-const pyfile = await fetch(`https://zoldof.github.io/${repo}/${file}`);
+const pyfile = await fetch(`https://zoldof.github.io/zenn-content/snippets/${file}`);
 const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
 const pyodide = await loadPyodide();
 const showText = await pyfile.text();
