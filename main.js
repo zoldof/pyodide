@@ -19,7 +19,7 @@ const pyFunc = pyodide.globals.get('measure');
 
 // 入力UI（あれば使う）
 let inputUI = () => {};
-const inputModule = await import(`./uis/${ui}-input.js`).catch(() => {});
+const inputModule = await import(`./uis/${ui}_input.js`).catch(() => {});
 if (inputModule?.inputUI) {
   inputUI = inputModule.inputUI;
 }
