@@ -22,12 +22,10 @@ export function parseTimeInput(input) {
   )) {
     throw new Error("無効な時刻です。時は 0–23、または 24:00:00 のみ有効です。");
   }
-
-  return [h, m, s];
 }
 
-export function validateStartEnd(startParts, endParts) {
-  if (startParts == endParts) {
+export function validateStartEnd(startStr, endStr) {
+  if (startStr == endStr) {
     throw new Error("開始時刻と終了時刻が同じです。異なる時刻を入力してください。");
   }
 }
