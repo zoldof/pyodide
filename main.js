@@ -24,11 +24,11 @@ if (inputModule?.inputUI) {
   inputUI = inputModule.inputUI;
 }
 
-const output = document.getElementById("output");
-output.textContent = "pyodide読み込み前";
+//const output = document.getElementById("output");
+//output.textContent = "pyodide読み込み前";
 // pyodideでpyの関数を使用
 const result = pyFunc(...await inputUI());
-output.textContent = result;
+//output.textContent = result;
 pyFunc.destroy();
 
 // 出力UI（必ず用意されている前提）
