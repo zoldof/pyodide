@@ -1,19 +1,19 @@
 import { parseTimeInput, validateStartEnd } from "./err/time-calc-error.js";
 
 export function inputUI() {
-  let startParts, endParts;
+  let startStr, endStr;
 
   while (true) {
     try {
-      startParts = parseTimeInput(prompt("開始時刻を入力してください（hh:mm:ss）"));
-      endParts   = parseTimeInput(prompt("終了時刻を入力してください（hh:mm:ss）"));
+      startStr = parseTimeInput(prompt("開始時刻を入力してください（hh:mm:ss）"));
+      endStr   = parseTimeInput(prompt("終了時刻を入力してください（hh:mm:ss）"));
 
-      validateStartEnd(startParts, endParts);
+      validateStartEnd(startStr, endStr);
       break;
     } catch (e) {
       alert(e.message);
     }
   }
 
-  return [startParts, endParts];
+  return [startStr, endStr];
 }
