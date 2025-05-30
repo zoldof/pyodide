@@ -1,8 +1,8 @@
-def measure(args):
+def measure(*args):
     tracemalloc.start()
     start_time = time.perf_counter()
 
-    result = main(args) 
+    result = main(*args) 
 
     end_time = time.perf_counter()
     current, peak = tracemalloc.get_traced_memory()
