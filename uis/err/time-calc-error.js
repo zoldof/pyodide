@@ -1,5 +1,3 @@
-// timeValidator.js
-
 export function parseTimeInput(input) {
   if (input === null) {
     throw new Error("キャンセルはできません。時刻を入力してください。");
