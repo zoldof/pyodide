@@ -10,7 +10,7 @@ async function getTimeInputLoop(message) {
 
     if (input === null) {
       alert("キャンセルされました。5秒後にもう一度お聞きします。");
-      await delay(5000); // 10秒待つ
+      await delay(5000); // 5秒待つ
       continue; // もう一度 prompt に戻る
     }
 
