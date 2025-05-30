@@ -1,13 +1,6 @@
 export function parseTimeInput(input) {
-  //if (input === null) {
-    //throw new Error("キャンセルはできません。時刻を入力してください。");
-  //}
   if (input === null) {
-    alert("キャンセルされました。10秒後に再度入力を促します。");
-    setTimeout(() => {
-      parseTimeInput(input); // 再帰的に再呼び出し
-    }, 10000); // 10000ミリ秒 = 10秒
-    return;
+    throw new Error("キャンセルはできません。時刻を入力してください。");
   }
 
   const parts = input.split(":");
