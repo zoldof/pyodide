@@ -17,7 +17,7 @@ async function getTimeInputLoop(message) {
     try {
       return parseTimeInput(input);
     } catch (e) {
-      alert("形式が正しくありません。");
+      alert(e.message);
     }
   }
 }
