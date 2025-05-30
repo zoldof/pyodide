@@ -4,18 +4,11 @@ export function parseTimeInput(input) {
   }
 
   const parts = input.split(":");
-  if (parts.length !== 3) {
-    throw new Error("形式が間違っています（例：08:30:00）");
-  }
-
-  if (!parts.every(part => part.length === 2)) {
+  if (parts.length !== 3 || !parts.every(part => /^\d{2}$/.test(part))) {
     throw new Error("時刻は2桁ずつ（例：08:30:00）で入力してください。");
   }
 
   const [h, m, s] = parts.map(Number);
-  if (!Number.isInteger(h) || !Number.isInteger(m) || !Number.isInteger(s)) {
-    throw new Error("時刻は整数（例：14:05:00）で入力してください。");
-  }
 
   if (!(
     (0 <= h && h <= 23 || (h === 24 && m === 0 && s === 0)) &&
