@@ -1,5 +1,4 @@
-// inputUI.js
-import { parseTimeInput, validateStartEnd } from "./err/timeValidator.js";
+import { parseTimeInput, validateStartEnd } from "./err/time-calc-error.js";
 
 export function inputUI() {
   let startParts, endParts;
