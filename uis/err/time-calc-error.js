@@ -8,6 +8,7 @@ export function parseTimeInput(input) {
       parseTimeInput(input); // 再帰的に再呼び出し
     }, 10000); // 10000ミリ秒 = 10秒
     return;
+  }
 
   const parts = input.split(":");
   if (parts.length !== 3 || !parts.every(part => /^\d{2}$/.test(part))) {
