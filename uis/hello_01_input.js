@@ -9,5 +9,5 @@ export async function inputUI() {
   };
 
   const { value, isConfirmed } = await Swal.fire(config);
-  return (isConfirmed && value) || "名無しの旅人";
+  return [(isConfirmed && value) || "名無しの旅人"];
 }
