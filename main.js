@@ -10,7 +10,7 @@ const pyodide = await loadPyodide();
 const codeBlock = document.getElementById("sourceCode");
 
 if (!pyfile.ok) {
-    codeBlock.textContent = `# Error: ファイルが見つかりませんでした。\n# URL: ${pyfile.url}`;
+    codeBlock.textContent = `# Error: ${file}が見つかりませんでした。`;
 } else {
     const showText = await pyfile.text();
     const scriptText = [await init.text(), showText, await measure.text()].join('\n\n');
