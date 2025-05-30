@@ -7,12 +7,17 @@ const init = await fetch(`https://zoldof.github.io/pyodide/init.py`);
 const pyfile = await fetch(`https://zoldof.github.io/zenn-content/snippets/${file}`);
 const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
 const pyodide = await loadPyodide();
-const showText = await pyfile.text();
-const scriptText = [await init.text(), showText, await measure.text()].join('\n\n');
 const codeBlock = document.getElementById("sourceCode");
-codeBlock.textContent = showText;
-hljs.highlightElement(codeBlock);
-await pyodide.runPythonAsync(scriptText);
+
+if (!pyfile.ok) {
+    codeBlock.textContent = `# Error: ファイルが見つかりませんでした。\n# URL: ${pyfile.url}`;
+} else {
+    const showText = await pyfile.text();
+    const scriptText = [await init.text(), showText, await measure.text()].join('\n\n');
+    codeBlock.textContent = showText;
+    hljs.highlightElement(codeBlock);
+    await pyodide.runPythonAsync(scriptText);
+}
 
 // Python 関数を取得（main名と一致させる）
 const pyFunc = pyodide.globals.get('measure');
