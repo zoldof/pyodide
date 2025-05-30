@@ -1,7 +1,13 @@
 export function parseTimeInput(input) {
+  //if (input === null) {
+    //throw new Error("キャンセルはできません。時刻を入力してください。");
+  //}
   if (input === null) {
-    throw new Error("キャンセルはできません。時刻を入力してください。");
-  }
+    alert("キャンセルされました。10秒後に再度入力を促します。");
+    setTimeout(() => {
+      parseTimeInput(input); // 再帰的に再呼び出し
+    }, 10000); // 10000ミリ秒 = 10秒
+    return;
 
   const parts = input.split(":");
   if (parts.length !== 3 || !parts.every(part => /^\d{2}$/.test(part))) {
@@ -17,6 +23,7 @@ export function parseTimeInput(input) {
   )) {
     throw new Error("無効な時刻です。時は 0–23、または 24:00:00 のみ有効です。");
   }
+  return input;
 }
 
 export function validateStartEnd(startStr, endStr) {
