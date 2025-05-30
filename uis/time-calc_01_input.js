@@ -5,9 +5,11 @@ export function inputUI() {
 
   while (true) {
     try {
-      startStr = parseTimeInput(prompt("開始時刻を入力してください（hh:mm:ss）"));
-      endStr   = parseTimeInput(prompt("終了時刻を入力してください（hh:mm:ss）"));
+      startStr = prompt("開始時刻を入力してください（hh:mm:ss）");
+      endStr   = prompt("終了時刻を入力してください（hh:mm:ss）");
 
+      parseTimeInput(startStr);
+      parseTimeInput(endStr);
       validateStartEnd(startStr, endStr);
       break;
     } catch (e) {
