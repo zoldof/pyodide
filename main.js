@@ -26,6 +26,7 @@ if (inputModule?.inputUI) {
 
 const output = document.getElementById("output");
 output.textContent = "pyodide読み込み前";
+output.textContent = ...await inputUI();
 // pyodideでpyの関数を使用
 const result = pyFunc(...await inputUI());
 output.textContent = result;
