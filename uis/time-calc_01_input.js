@@ -4,11 +4,11 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function getTimeInputLoop(message) {
+async function getTimeInputLoop(promptMessage) {
   const config = {
-    title: "時刻の入力",
+    title: promptMessage,
     input: "text",
-    inputPlaceholder: message,
+    inputPlaceholder: "hh:mm:ss",
     showCancelButton: true,
     confirmButtonText: "決定",
     cancelButtonText: "キャンセル"
@@ -32,8 +32,8 @@ async function getTimeInputLoop(message) {
 }
 
 export async function inputUI() {
-  const startStr = await getTimeInputLoop("開始時刻を入力してください（hh:mm:ss）");
-  const endStr   = await getTimeInputLoop("終了時刻を入力してください（hh:mm:ss）");
+  const startStr = await getTimeInputLoop("開始時刻を入力してください");
+  const endStr   = await getTimeInputLoop("終了時刻を入力してください");
 
   validateStartEnd(startStr, endStr);
   return [startStr, endStr];
