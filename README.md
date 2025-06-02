@@ -1,6 +1,6 @@
 **py**
 - init
-- read
+- main
 - measure
 
 **js**
