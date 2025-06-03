@@ -1,11 +1,12 @@
 const params = new URLSearchParams(location.search);
 const ui = params.get('ui');
+const path = `https://zoldof.github.io/zenn-content`;
 const file = `${ui}.py`;
 
 import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
-const init = await fetch(`https://zoldof.github.io/pyodide/init.py`);
-const pyfile = await fetch(`https://zoldof.github.io/zenn-content/snippets/${file}`);
-const measure = await fetch(`https://zoldof.github.io/pyodide/measure.py`);
+const init = await fetch(`${path}/scripts/init.py`);
+const pyfile = await fetch(`${path}/snippets/${file}`);
+const measure = await fetch(`${path}/scripts/measure.py`);
 const pyodide = await loadPyodide();
 const codeBlock = document.getElementById("sourceCode");
 
