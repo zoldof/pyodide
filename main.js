@@ -4,9 +4,9 @@ const path = `https://zoldof.github.io/zenn-content`;
 const file = `${ui}.py`;
 
 import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
-const init = await fetch(`${path}/scripts/init.py`);
+const init = await fetch(`${path}/tools/init.py`);
 const pyfile = await fetch(`${path}/snippets/${file}`);
-const measure = await fetch(`${path}/scripts/measure.py`);
+const measure = await fetch(`${path}/tools/measure.py`);
 const pyodide = await loadPyodide();
 const codeBlock = document.getElementById("sourceCode");
 
