@@ -1,6 +1,6 @@
 const params = new URLSearchParams(location.search);
 const ui = params.get('ui');
-const path = `https://z.github.io/zenn-content`;
+const path = `https://zoldof.github.io/zenn-content`;
 const file = `${ui}.py`;
 
 import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
